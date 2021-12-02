@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: komugi-backend-deployment
+  labels:
+    end: komugi-back
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      end: komugi-back
+  template:
+    metadata:
+      labels:
+        end: komugi-back
+    spec:
+      containers:
+      - name: borodun-komugi-rest-server-1
+        image: borodun/komugi-rest-server
+        ports:
+        - containerPort: 8888
+      

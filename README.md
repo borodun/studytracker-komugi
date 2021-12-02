@@ -1,1 +1,2 @@
-# studytracker-komugi
+# Info
+Application creation project from ground up

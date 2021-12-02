@@ -1,0 +1,24 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: komugi-front-deployment
+  labels:
+    end: komugi-front
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      end: komugi-front
+  template:
+    metadata:
+      labels:
+        end: komugi-front
+    spec:
+      containers:
+      - name: komugi-front-container
+        image: borodun/komugi-front
+        ports:
+        - containerPort: 80
+        env:
+        - name: API_BASE_URL
+          value: http://45.9.24.10:32228/
